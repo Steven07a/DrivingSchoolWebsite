@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formContainer {
+    padding: 3rem 5rem;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+}
