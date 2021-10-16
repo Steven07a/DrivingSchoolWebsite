@@ -5,10 +5,6 @@
     height: 100vh;
 }
 
-.formContainer {
-    padding: 3rem 5rem;
-}
-
 .login {
     display: flex;
     flex-direction: column;
@@ -17,7 +13,24 @@
     border: 1px solid grey;
 }
 
+.loginText {
+    padding: 3rem 5rem;
+}
+
+.formContainer {
+    padding: 3rem 5rem;
+}
+
 .formItem {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
+}
+
+
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
 }
