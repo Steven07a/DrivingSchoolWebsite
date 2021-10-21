@@ -34,3 +34,11 @@
     align-items: center;
     margin: 2rem;
 }
+
+
+.textClick {
+    color: cornflowerblue;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    cursor: pointer;
+}

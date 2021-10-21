@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar/NavBar';
-import login from "./pages/Login";
+import AuthPage from "./pages/Auth";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -12,7 +12,7 @@ class App extends Component {
                     <NavBar />
                     <div className="content">
                         <Switch>
-                            <Route path="/login" component={login}>
+                            <Route path="/login" component={AuthPage}>
                             </Route>
                         </Switch>
                     </div>
