@@ -9,6 +9,7 @@ import Signup from "../components/Signup/Signup";
 import "../styles/login.css";
 
 export default function AuthPage() {
+    // Need to reenable routing later
     //const history = useHistory();
 
     const [allValues, setAllValues] = useState({
@@ -19,7 +20,12 @@ export default function AuthPage() {
         isLogin: true
     })
 
-
+    /**
+     * 
+     * @param {*} e 
+     * 
+     * Updates state whenever user enters information into a text field.
+     */
     const changeHandler = (e) => {
         setAllValues({ ...allValues, [e.target.name]: e.target.value })
     }
@@ -32,6 +38,9 @@ export default function AuthPage() {
         console.log(allValues);
     };
 
+    /**
+     * Swaps betwen login and sign up components
+     */
     const swapForms = () => {
         setAllValues({ ...allValues, isLogin: !allValues.isLogin });
     }
@@ -39,24 +48,16 @@ export default function AuthPage() {
     return (
         <div className="login">
             <h1 className="loginText">Welcome</h1>
-
+            {/**conditional displaying the signup or login screen */}
             {allValues.isLogin ? <Login changeHandler={changeHandler} /> : <Signup changeHandler={changeHandler} onSubmit={onSubmit} />}
             {/*change this to a LoadingButton later */}
             {/* #TODO match size of button with input box above */}
             {/** Keep the buttons out here since state is at this level */}
             <div className="submitBtn">
-                <Button
-                    variant="contained"
-                    type="submit"
-                    onClick={onSubmit}
-                >
+                <Button variant="contained" type="submit" onClick={onSubmit}>
                     Log In
                 </Button>
-                <Button
-                    variant="contained"
-                    type="button"
-                    onClick={swapForms}
-                >
+                <Button variant="contained" type="button" onClick={swapForms}>
                     Sign Up
                 </Button>
             </div>

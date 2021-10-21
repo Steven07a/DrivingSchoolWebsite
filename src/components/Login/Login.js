@@ -8,7 +8,7 @@ import "../../styles/login.css";
 export default function Login({
     changeHandler
 }) {
-    // using the material ui + react hook form library
+    //using the material ui + react hook form library
     const { register } = useForm();
 
     return (
