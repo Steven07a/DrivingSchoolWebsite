@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-southpassds-dev-194131-authRole",
+      "UnauthRoleArn": "arn:aws:iam::180332144759:role/amplify-southpassds-dev-194131-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::180332144759:role/amplify-southpassds-dev-194131-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-southpassds-dev-194131-deployment",
+      "UnauthRoleName": "amplify-southpassds-dev-194131-unauthRole",
+      "StackName": "amplify-southpassds-dev-194131",
+      "StackId": "arn:aws:cloudformation:us-west-1:180332144759:stack/amplify-southpassds-dev-194131/91ebe8b0-32e1-11ec-aabd-06b650468341",
+      "AmplifyAppId": "d1hds9q9bpx0ql"
+    },
+    "categories": {
+      "auth": {
+        "southpassds5932e632": {}
+      }
+    }
+  }
+}
