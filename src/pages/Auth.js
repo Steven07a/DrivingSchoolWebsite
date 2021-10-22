@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //import { useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
+import { AmplifyAuthenticator, AmplifySignin } from "@aws-amplify/ui-react";
 
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
@@ -38,6 +39,25 @@ export default function AuthPage() {
         console.log(allValues);
     };
 
+    const signIn = async (username, password) => {
+        try {
+            Auth.signIn({ username, password}).then((user) => {
+                if (user.challengeName === "NEW_PASSWORD_REQUIRED") {
+                    Auth.completeNewPassword(user, newPassword, {}).then((user) => {
+                        Auth.signIn({ username: username, password: newPassword}).then((user) => {
+                            /** need to lift state up here to confirm sign in or not */
+                            // user is signed in here
+                        }).catch((error) => {
+                            //failed to sign in 
+                        })
+                    })
+                }
+            })
+        } catch (error) {
+            
+        }
+    }
+
     /**
      * Swaps betwen login and sign up components
      */
@@ -47,23 +67,9 @@ export default function AuthPage() {
 
     return (
         <div className="login">
-            <h1 className="loginText">Welcome</h1>
-            {/**conditional displaying the signup or login screen */}
-            {allValues.isLogin ? <Login changeHandler={changeHandler} /> : <Signup changeHandler={changeHandler} onSubmit={onSubmit} />}
-            {/*change this to a LoadingButton later */}
-            {/* #TODO match size of button with input box above */}
-            {/** Keep the buttons out here since state is at this level */}
-            <div className="submitBtn">
-                <Button variant="contained" type="submit" onClick={onSubmit}>
-                    Log In
-                </Button>
-                <Button variant="contained" type="button" onClick={swapForms}>
-                    Sign Up
-                </Button>
-            </div>
-            <p className="textClick" onClick={swapForms}>
-                Return to Sign In
-            </p>
+            <AmplifyAuthenticator>
+                <AmplifySignin />
+            </AmplifyAuthenticator>
         </div>
     )
 }
