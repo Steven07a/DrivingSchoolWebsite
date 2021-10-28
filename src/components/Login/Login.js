@@ -1,6 +1,6 @@
 import React from 'react';
-import { Controller, useForm } from "react-hook-form";
-import { TextField, Button, Grid, Paper } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { Button, Grid, Paper, Typography, FormControl } from "@mui/material";
 
 import FormTextField from "../FormTextField/FormTextField";
 
@@ -13,6 +13,8 @@ export default function Login({
     //using the material ui + react hook form library
     const { handleSubmit, reset, control } = useForm();
 
+    
+
     return (
         <Grid
             container
@@ -22,11 +24,53 @@ export default function Login({
             justifyContent="center"
         >
             <Grid item xs={2}>
-                <Paper 
-                elevation={3}
-                sx={{ p: 4}}>
-                    <form>
-                        <h2> Login </h2>
+                <Paper
+                    elevation={3}
+                    sx={{
+                        p: 4,
+                        padding: "2rem",
+                        display: "grid",
+                        
+                    }}>
+                    <FormControl > 
+                    <Typography variant="h2"> Log In </Typography>
+                        <FormTextField
+                            name={"email"}
+                            control={control}
+                            label={"email"}
+                            onChange={changeHandler}
+                            
+                        />
+                        <FormTextField
+                            name={"password"}
+                            control={control}
+                            label={"password"}
+                            onChange={changeHandler}
+                        />
+                        <Button type="submit" variant="contained" color="primary">
+                            Sign in
+                        </Button>
+                    </FormControl>
+                    {/**<form className="login-form">
+                        <Typography variant="h2"> Log In </Typography>
+                        <FormTextField
+                            name={"Email"}
+                            control={control}
+                            label={"Email"}
+                            onChange={changeHandler}
+                            
+                        />
+                        <FormTextField
+                            name={"Password"}
+                            control={control}
+                            label={"Password"}
+                            onChange={changeHandler}
+                        />
+                        <Button type="submit" variant="contained" color="primary">
+                            Sign in
+                        </Button>
+                
+                        {/** 
                         <Controller
                             name={"Email"}
                             control={control}
@@ -45,8 +89,9 @@ export default function Login({
                             name={"test"}
                             control={control}
                             label={"test"}
-                            />
-                    </form>
+                        />
+                            
+                    </form>*/}
                 </Paper>
             </Grid>
         </Grid>
