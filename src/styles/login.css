@@ -3,14 +3,16 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: darkgrey;
 }
 
-.login {
+.auth-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid grey;
+    background-color: white;
 }
 
 .loginText {
@@ -19,6 +21,7 @@
 
 .formContainer {
     padding: 3rem 5rem;
+    background-color: white;
 }
 
 .formItem {
