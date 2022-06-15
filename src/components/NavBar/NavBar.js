@@ -16,7 +16,7 @@ export default function NavBar() {
         return null;
     }
 
-    //example of functional state
+    // example of functional state
     // const [student,setStudent] = useState(
     //     {
     //         studentName: "",
@@ -50,23 +50,5 @@ export default function NavBar() {
             
             <Button>Sign Up</Button>
         </nav>
-        // <nav className="NavBarItems">
-        //     <h1 className="navbar-logo">
-        //         <i class="fas fa-car-side"></i>
-        //         South Pass Student Dashboard
-        //         <i class="fas fa-car-side"></i>
-        //     </h1>
-        //     <ul className="nav-menu">
-        //         {menuItems.map((item, index) => {
-        //             return (
-        //                 <li key={index}>
-        //                     <a className={item.className} href={item.url}>
-        //                         {item.title}
-        //                     </a>
-        //                 </li>
-        //             );
-        //         })}
-        //     </ul>
-        // </nav>
     );
 }

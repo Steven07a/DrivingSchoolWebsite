@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 //TODO: need to split this off into it's own thing
 import "../../styles/login.css";
@@ -36,6 +36,15 @@ export default function Signup({
                 <TextField {...register("lastName")}
                     name="lastName"
                     onChange={changeHandler} />
+            </div>
+            <div className="formItem">
+                <label>Email</label>
+                <TextField {...register("email")}
+                    name="lastName"
+                    onChange={changeHandler} />
+            </div>
+            <div className="formItem">
+                <Button type="submit" variant="contained" color="primary">Sign Up</Button>
             </div>
         </form>
     )
